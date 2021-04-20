@@ -43,4 +43,3 @@ gravity = 600.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
-[connection signal="entered_portal" from="Portal" to="." method="_on_Portal_entered_portal"]
