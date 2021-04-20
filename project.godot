@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "IntensityGravityAreaNode",
 "language": "GDScript",
-"path": "res://Julian/IntensityGravityArea/IntensityGravityAreaNode.gd"
+"path": "res://Julian/GravityArea/IntensityGravityArea/IntensityGravityAreaNode.gd"
 }, {
 "base": "Resource",
 "class": "RotatingGravityAreaNode",
 "language": "GDScript",
-"path": "res://Julian/RotatingGravityArea/RotatingGravityAreaNode.gd"
+"path": "res://Julian/GravityArea/RotatingGravityArea/RotatingGravityAreaNode.gd"
 } ]
 _global_script_class_icons={
 "IntensityGravityAreaNode": "",
