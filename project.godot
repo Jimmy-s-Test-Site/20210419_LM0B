@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "IntensityGravityAreaNode",
+"language": "GDScript",
+"path": "res://Julian/IntensityGravityArea/IntensityGravityAreaNode.gd"
+}, {
+"base": "Resource",
 "class": "RotatingGravityAreaNode",
 "language": "GDScript",
 "path": "res://Julian/RotatingGravityArea/RotatingGravityAreaNode.gd"
 } ]
 _global_script_class_icons={
+"IntensityGravityAreaNode": "",
 "RotatingGravityAreaNode": ""
 }
 
