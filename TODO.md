@@ -12,7 +12,7 @@
   - [x] gravitational pull
 - [x] area gravity
 - [x] rotating gravity
-- [ ] changing intensity gravity
+- [x] changing intensity gravity
 - [ ] moving platforms
   - [ ] move in line
   - [ ] orbit
