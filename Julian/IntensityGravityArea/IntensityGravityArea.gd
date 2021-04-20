@@ -20,7 +20,7 @@ func _ready() -> void:
 			"timeout",
 			self,
 			"timer_callback",
-			[gravity_area_node_iteration, gravity_area_node.gravity_vector]
+			[gravity_area_node_iteration, gravity_area_node.gravity]
 		)
 		$Timers.add_child(timer)
 		
@@ -28,12 +28,11 @@ func _ready() -> void:
 			timer.start()
 			is_first = false
 
-func timer_callback(index : int, gravity_vector : Vector2) -> void:
+func timer_callback(index : int, gravity_parameter : float) -> void:
 	if enabled:
-		self.gravity_vec = gravity_vector
+		self.gravity = gravity_parameter
 		
 		var next_timer_index : int = (index + 1) % self.gravity_area_nodes.size()
 		var next_timer_name : String = str("Timer", next_timer_index)
 		var next_timer_path : String = str("Timers/", next_timer_name)
 		self.get_node(next_timer_path).start()
-	
