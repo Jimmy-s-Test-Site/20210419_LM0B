@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Julian/Portal/Portal.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Portal.png" type="Texture" id=2]
+[ext_resource path="res://Julian/Portal/crop_circle_plus_bloom.shader" type="Shader" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/bloom_amount = 30.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 1.5
+
+[node name="Portal" type="Area2D"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource( 4 )
+[connection signal="area_entered" from="CollisionArea" to="." method="_on_CollisionArea_area_entered"]

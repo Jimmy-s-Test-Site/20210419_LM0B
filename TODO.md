@@ -7,9 +7,9 @@
   - [ ] shoot fire extinguisher gas (omnidirectional, mouse)
   - [ ] reset (r)
 - [ ] portals
-  - [ ] should have glow
+  - [x] should have glow
   - [ ] work in both directions
-  - [ ] gravitational pull
+  - [x] gravitational pull
 - [ ] area gravity
 - [ ] rotating gravity
 - [ ] changing intensity gravity
