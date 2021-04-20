@@ -11,7 +11,7 @@
   - [ ] work in both directions
   - [x] gravitational pull
 - [x] area gravity
-- [ ] rotating gravity
+- [x] rotating gravity
 - [ ] changing intensity gravity
 - [ ] moving platforms
   - [ ] move in line
