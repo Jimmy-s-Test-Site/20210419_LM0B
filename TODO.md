@@ -10,7 +10,7 @@
   - [x] should have glow
   - [ ] work in both directions
   - [x] gravitational pull
-- [ ] area gravity
+- [x] area gravity
 - [ ] rotating gravity
 - [ ] changing intensity gravity
 - [ ] moving platforms
