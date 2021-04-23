@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Julian/Game/Game.gd" type="Script" id=1]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+start_level = "res://Julian/Level/TestLevel1.tscn"
+
+[node name="Level" type="Node2D" parent="."]

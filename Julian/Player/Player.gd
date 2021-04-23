@@ -1,10 +1,17 @@
 extends RigidBody2D
 
+signal consumed_fire_extinguisher_liquid(new_total)
+
 enum {
 	IDLE,
 	PROPEL,
 	AIR
 }
+
+# fire extinguisher liquid
+export var FEL_max := 100.0
+export var FEL_amount := 100.0
+export var FEL_per_sec := 0.01
 
 export var propel_speed := 20.0
 export var max_propel_speed := 200.0
@@ -17,10 +24,8 @@ onready var _transitions := {
 }
 
 var _state : int = IDLE
-
 var input_propel = false
 var input = Vector2.ZERO
-
 
 
 func _ready() -> void:
@@ -32,6 +37,11 @@ func _process(delta: float) -> void:
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	self.do_state()
 	self.leave_state(state)
+
+func _physics_process(delta: float) -> void:
+	if _state == PROPEL:
+		self.FEL_amount -= delta * self.FEL_per_sec
+		self.FEL_amount = clamp(self.FEL_amount, 0, self.FEL_max)
 
 
 
