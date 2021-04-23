@@ -2,13 +2,13 @@
 
 ## Behaviors
 
-- [ ] player
+- [x] player
   - [x] push mechanic (WASD)
   - [x] shoot fire extinguisher gas (omnidirectional, mouse)
-  - [ ] reset (r)
-- [ ] portals
+  - [x] reset (r)
+- [x] portals
   - [x] should have glow
-  - [ ] work in both directions
+  - [x] work in both directions
   - [x] gravitational pull
 - [x] area gravity
 - [x] rotating gravity

@@ -18,8 +18,9 @@ tile_data = PoolIntArray( 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 405, 495 )
 
-[node name="Portal" parent="." instance=ExtResource( 3 )]
+[node name="Portal1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 696, 366 )
 scale = Vector2( 20, 20 )
 next_level = "res://Julian/Level/TestLevel2.tscn"
-[connection signal="entered_portal" from="Portal" to="." method="_on_Portal_entered_portal"]
+exit_portal = "Portal1"
+[connection signal="entered_portal" from="Portal1" to="." method="_on_Portal_entered_portal"]

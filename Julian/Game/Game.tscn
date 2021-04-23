@@ -11,6 +11,7 @@ glow_blend_mode = 0
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 start_level = "res://Julian/Level/TestLevel1.tscn"
+start_portal = "Portal1"
 
 [node name="Level" type="Node2D" parent="."]
 
