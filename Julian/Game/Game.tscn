@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Julian/Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://Julian/FEL/FEL.tscn" type="PackedScene" id=2]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 start_level = "res://Julian/Level/TestLevel1.tscn"
 
 [node name="Level" type="Node2D" parent="."]
+
+[node name="FEL" parent="." instance=ExtResource( 2 )]
+position = Vector2( 47, 50 )

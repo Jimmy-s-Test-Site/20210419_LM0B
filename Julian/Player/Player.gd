@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-signal consumed_fire_extinguisher_liquid(new_total)
+signal consumed_FEL(new_total)
 
 enum {
 	IDLE,
@@ -11,7 +11,7 @@ enum {
 # fire extinguisher liquid
 export var FEL_max := 100.0
 export var FEL_amount := 100.0
-export var FEL_per_sec := 0.01
+export var FEL_per_sec := 10
 
 export var propel_speed := 20.0
 export var max_propel_speed := 200.0
@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	if _state == PROPEL:
 		self.FEL_amount -= delta * self.FEL_per_sec
 		self.FEL_amount = clamp(self.FEL_amount, 0, self.FEL_max)
+		self.emit_signal("consumed_FEL", self.FEL_amount / self.FEL_max)
 
 
 
@@ -77,9 +78,8 @@ func do_state() -> void:
 		IDLE:
 			pass
 		PROPEL:
-			var propel_direction := (self.get_global_mouse_position() - self.global_position).normalized()
-			
-			self.apply_central_impulse(propel_direction.rotated(PI) * self.propel_speed)
+			var propel_direction := self.get_local_mouse_position().normalized()
+			self.apply_central_impulse(propel_direction.rotated(self.rotation).rotated(PI) * self.propel_speed)
 			
 			if self.linear_velocity.length() > self.max_propel_speed:
 				self.linear_velocity = self.linear_velocity.normalized() * self.max_propel_speed
@@ -93,15 +93,15 @@ func leave_state(state: Physics2DDirectBodyState) -> void:
 	
 	match self._state:
 		IDLE:
-			if self.input_propel:
+			if self.input_propel and self.FEL_amount > 0:
 				self.change_state(PROPEL)
 			elif is_touching_surface and self.input.length() > 0:
 				self.change_state(AIR)
 		PROPEL:
-			if not self.input_propel:
+			if not self.input_propel or self.FEL_amount == 0:
 				self.change_state(IDLE)
 		AIR:
-			if self.input_propel and $JustPushedTimer.is_stopped():
+			if self.input_propel and self.FEL_amount > 0 and $JustPushedTimer.is_stopped():
 				self.change_state(PROPEL)
 			elif is_touching_surface and $JustPushedTimer.is_stopped():
 				self.change_state(IDLE)
