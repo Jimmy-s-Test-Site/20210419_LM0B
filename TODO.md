@@ -3,8 +3,8 @@
 ## Behaviors
 
 - [ ] player
-  - [ ] push mechanic (WASD)
-  - [ ] shoot fire extinguisher gas (omnidirectional, mouse)
+  - [x] push mechanic (WASD)
+  - [x] shoot fire extinguisher gas (omnidirectional, mouse)
   - [ ] reset (r)
 - [ ] portals
   - [x] should have glow

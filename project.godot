@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="20210419 Lm 0b"
+run/main_scene="res://Julian/Game/Game.tscn"
 config/icon="res://Sprites/icon.png"
 
 [input]
