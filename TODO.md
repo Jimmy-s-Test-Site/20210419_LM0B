@@ -13,21 +13,21 @@
 - [x] area gravity
 - [x] rotating gravity
 - [x] changing intensity gravity
-- [ ] moving platforms
+- [ ] ~~moving platforms~~ didn't have the time
   - [ ] move in line
   - [ ] orbit
   - [ ] rotational
-- [ ] ~15 levels
-- [ ] ending screen
+- [x] ~~~15 levels~~ Only 5
+- [x] ending screen
 
 ## Art
 
 Pixel art.
 
-- [ ] font
-- [ ] player
-- [ ] extinguisher
-  - [ ] particles for fire extinguisher gas
-- [ ] portal
-- [ ] gravity area's sprite
-- [ ] platforms/tileset
+- [x] font
+- [x] player
+- [x] extinguisher
+  - [x] particles for fire extinguisher gas
+- [x] portal
+- [ ] ~~gravity area's sprite~~ didn't have the time
+- [x] platforms/tileset
