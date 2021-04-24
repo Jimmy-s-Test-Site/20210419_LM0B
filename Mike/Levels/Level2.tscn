@@ -1,11 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Julian/LevelDemo/DemoTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Julian/Level/Level.gd" type="Script" id=2]
+[ext_resource path="res://Julian/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Julian/Portal/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Julian/GravityArea/RotatingGravityArea/RotatingGravityArea.tscn" type="PackedScene" id=5]
 
 [node name="LevelDemo" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
+tile_data = PoolIntArray( 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 196606, 0, 0, 196607, 0, 0, 131073, 0, 0, 131085, 0, 0, 131087, 0, 0, 131088, 0, 0, 262141, 0, 0, 262142, 0, 0, 196609, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 327676, 0, 0, 262145, 0, 0, 262162, 0, 0, 393211, 0, 0, 393212, 0, 0, 327681, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327699, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 393217, 0, 0, 393225, 0, 0, 393235, 0, 0, 393236, 0, 0, 524281, 0, 0, 524282, 0, 0, 524284, 0, 0, 458753, 0, 0, 458761, 0, 0, 458772, 0, 0, 458773, 0, 0, 589817, 0, 0, 589820, 0, 0, 524289, 0, 0, 524297, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524309, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589833, 0, 0, 589837, 0, 0, 589845, 0, 0, 589846, 0, 0, 720888, 0, 0, 655361, 0, 0, 655369, 0, 0, 655373, 0, 0, 655382, 0, 0, 786424, 0, 0, 720897, 0, 0, 720905, 0, 0, 720909, 0, 0, 720918, 0, 0, 851960, 0, 0, 786433, 0, 0, 786441, 0, 0, 786445, 0, 0, 786454, 0, 0, 917496, 0, 0, 917501, 0, 0, 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851981, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 983032, 0, 0, 983037, 0, 0, 917517, 0, 0, 917526, 0, 0, 1048568, 0, 0, 1048573, 0, 0, 983053, 0, 0, 983062, 0, 0, 1114104, 0, 0, 1114109, 0, 0, 1048589, 0, 0, 1048598, 0, 0, 1179640, 0, 0, 1179645, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114125, 0, 0, 1114129, 0, 0, 1114134, 0, 0, 1245176, 0, 0, 1179649, 0, 0, 1179653, 0, 0, 1179665, 0, 0, 1179670, 0, 0, 1310712, 0, 0, 1245185, 0, 0, 1245189, 0, 0, 1245201, 0, 0, 1245206, 0, 0, 1376248, 0, 0, 1376249, 0, 0, 1310721, 0, 0, 1310725, 0, 0, 1310737, 0, 0, 1310741, 0, 0, 1310742, 0, 0, 1441785, 0, 0, 1441786, 0, 0, 1441787, 0, 0, 1441788, 0, 0, 1441789, 0, 0, 1376257, 0, 0, 1376261, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376273, 0, 0, 1376277, 0, 0, 1507321, 0, 0, 1507322, 0, 0, 1507325, 0, 0, 1441793, 0, 0, 1441805, 0, 0, 1441809, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1572858, 0, 0, 1572859, 0, 0, 1572861, 0, 0, 1507329, 0, 0, 1507341, 0, 0, 1507345, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1638395, 0, 0, 1638397, 0, 0, 1572865, 0, 0, 1572877, 0, 0, 1572881, 0, 0, 1572883, 0, 0, 1703932, 0, 0, 1703933, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638413, 0, 0, 1638417, 0, 0, 1638418, 0, 0, 1769469, 0, 0, 1769470, 0, 0, 1703937, 0, 0, 1703949, 0, 0, 1703952, 0, 0, 1703953, 0, 0, 1835006, 0, 0, 1835007, 0, 0, 1769473, 0, 0, 1769485, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1900543, 0, 0, 1835008, 0, 0, 1835009, 0, 0, 1835021, 0, 0, 1835022, 0, 0, 1835023, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900547, 0, 0, 1900548, 0, 0, 1900549, 0, 0, 1900550, 0, 0, 1900551, 0, 0, 1900552, 0, 0, 1900553, 0, 0, 1900554, 0, 0, 1900555, 0, 0, 1900556, 0, 0, 1900557, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 496 )
+FEL_max = 250.0
+FEL_amount = 250.0
+
+[node name="PortalTo3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 112, 888 )
+scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/Level3.tscn"
+exit_portal = "PortalTo2"
+
+[node name="PortalTo1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 240, 496 )
+scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/Level1.tscn"
+exit_portal = "Portal"
+
+[node name="PortalTo4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 664, 368 )
+scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/Level4.tscn"
+exit_portal = "PortalTo2"
+
+[node name="PortalTo5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -31.9999, 176 )
+scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/Level5.tscn"
+exit_portal = "PortalTo2"
+
+[node name="RotatingGravityArea" parent="." instance=ExtResource( 5 )]
+position = Vector2( 184, 496 )
+scale = Vector2( 61.12, 47.9581 )
+gravity_vec = Vector2( 0, 1 )
+[connection signal="entered_portal" from="PortalTo3" to="." method="_on_Portal_entered_portal"]
+[connection signal="entered_portal" from="PortalTo1" to="." method="_on_Portal_entered_portal"]
+[connection signal="entered_portal" from="PortalTo4" to="." method="_on_Portal_entered_portal"]
+[connection signal="entered_portal" from="PortalTo5" to="." method="_on_Portal_entered_portal"]
