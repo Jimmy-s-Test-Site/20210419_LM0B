@@ -48,8 +48,8 @@ func _physics_process(delta: float) -> void:
 
 func input_manager() -> void:
 	self.input = Vector2(
-		Input.get_action_strength("push_right") - Input.get_action_strength("push_left"),
-		Input.get_action_strength("push_down")  - Input.get_action_strength("push_up")
+		Input.get_action_strength("push_left") - Input.get_action_strength("push_right"),
+		Input.get_action_strength("push_up")   - Input.get_action_strength("push_down")
 	).normalized()
 	
 	self.input_propel = Input.get_action_strength("propel")

@@ -64,3 +64,6 @@ local_coords = false
 draw_order = 1
 process_material = SubResource( 6 )
 texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
