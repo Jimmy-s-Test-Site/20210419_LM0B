@@ -48,3 +48,4 @@ region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="FEL" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 47, 50 )
+default_color = Color( 0.66, 0.4, 20, 1 )
