@@ -36,15 +36,15 @@ environment = SubResource( 1 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 0.1, 0.1 )
 
 [node name="Background" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( -716, -112 )
-scale = Vector2( 26, 26 )
+position = Vector2( -3229, -499 )
+scale = Vector2( 25, 25 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 96, 32 )
+region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="FEL" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 47, 50 )
