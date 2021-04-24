@@ -41,6 +41,7 @@ position = Vector2( 256, 800 )
 position = Vector2( 336, 848 )
 scale = Vector2( 111.92, 129.88 )
 gravity_vec = Vector2( 1, -1 )
+gravity = 200.0
 [connection signal="entered_portal" from="PortalTo1" to="." method="_on_Portal_entered_portal"]
 [connection signal="entered_portal" from="PortalTo2" to="." method="_on_Portal_entered_portal"]
 [connection signal="entered_portal" from="PortalTo3" to="." method="_on_Portal_entered_portal"]

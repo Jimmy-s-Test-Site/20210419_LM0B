@@ -1,10 +1,31 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Julian/LevelDemo/DemoTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Julian/Level/Level.gd" type="Script" id=2]
 [ext_resource path="res://Julian/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Julian/Portal/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Julian/GravityArea/RotatingGravityArea/RotatingGravityArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Julian/GravityArea/RotatingGravityArea/RotatingGravityAreaNode.gd" type="Script" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 6 )
+gravity_vector = Vector2( 0, 1 )
+time = 2.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 6 )
+gravity_vector = Vector2( 0, -1 )
+time = 2.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 6 )
+gravity_vector = Vector2( 1, 0 )
+time = 2.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 6 )
+gravity_vector = Vector2( -1, 0 )
+time = 2.0
 
 [node name="LevelDemo" type="Node2D"]
 script = ExtResource( 2 )
@@ -49,6 +70,7 @@ exit_portal = "PortalTo2"
 position = Vector2( 184, 496 )
 scale = Vector2( 61.12, 47.9581 )
 gravity_vec = Vector2( 0, 1 )
+gravity_area_nodes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 [connection signal="entered_portal" from="PortalTo3" to="." method="_on_Portal_entered_portal"]
 [connection signal="entered_portal" from="PortalTo1" to="." method="_on_Portal_entered_portal"]
 [connection signal="entered_portal" from="PortalTo4" to="." method="_on_Portal_entered_portal"]

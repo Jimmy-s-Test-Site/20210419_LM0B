@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Julian/LevelDemo/DemoTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Julian/Level/Level.gd" type="Script" id=2]
 [ext_resource path="res://Julian/Portal/Portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Julian/Player/Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 54.815
 
 [node name="LevelDemo" type="Node2D"]
 script = ExtResource( 2 )
@@ -18,8 +21,23 @@ tile_data = PoolIntArray( -1441789, 0, 0, -1441788, 0, 0, -1441787, 0, 0, -14417
 [node name="PortalTo2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1168, 168 )
 scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/Level2.tscn"
+exit_portal = "PortalTo2"
+
+[node name="PortalTo3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 237, 414 )
+scale = Vector2( 20, 20 )
+next_level = "res://Mike/Levels/FinalLevel.tscn"
+exit_portal = "FinalPortal"
+
+[node name="CollisionShape2D" parent="PortalTo3" index="0"]
+shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1144, 88 )
 FEL_max = 500.0
 FEL_amount = 500.0
+[connection signal="entered_portal" from="PortalTo2" to="." method="_on_Portal_entered_portal"]
+[connection signal="entered_portal" from="PortalTo3" to="." method="_on_Portal_entered_portal"]
+
+[editable path="PortalTo3"]

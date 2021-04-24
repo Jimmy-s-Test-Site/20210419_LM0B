@@ -31,12 +31,14 @@ exit_portal = "PortalTo3"
 [node name="GravityDown" parent="." instance=ExtResource( 3 )]
 position = Vector2( 528, 856 )
 scale = Vector2( 54.4197, 37.7043 )
-gravity_vec = Vector2( 0, -1 )
+gravity_vec = Vector2( 0, 1 )
+gravity = 200.0
 
 [node name="GravityUp" parent="." instance=ExtResource( 3 )]
 position = Vector2( 528, 224 )
 scale = Vector2( 54.32, 25.6 )
-gravity_vec = Vector2( 0, 1 )
+gravity_vec = Vector2( 0, -1 )
+gravity = 200.0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 528, 144 )

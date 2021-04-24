@@ -1,11 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Julian/LevelDemo/DemoTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Julian/Level/Level.gd" type="Script" id=2]
+[ext_resource path="res://Julian/Portal/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Julian/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mike/Levels/FiraCode-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 86
+font_data = ExtResource( 5 )
 
 [node name="LevelDemo" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
+
+[node name="FinalPortal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 516, 282 )
+scale = Vector2( 20, 20 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1144, 88 )
+FEL_max = 500.0
+FEL_amount = 500.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 91.0
+margin_top = 47.0
+margin_right = 263.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 1 )
+text = "END"
+__meta__ = {
+"_edit_use_anchors_": false
+}

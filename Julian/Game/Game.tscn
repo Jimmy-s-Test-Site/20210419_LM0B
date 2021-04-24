@@ -24,7 +24,7 @@ glow_bicubic_upscale = true
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 start_level = "res://Mike/Levels/Level1.tscn"
-start_portal = "Portal"
+start_portal = "Portal2"
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -34,13 +34,14 @@ environment = SubResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+follow_viewport_enable = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 0.01, 0.01 )
 
 [node name="Background" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( -716, -112 )
-scale = Vector2( 26, 26 )
+position = Vector2( -1661, -491 )
+scale = Vector2( 48, 48 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true
